@@ -43,11 +43,7 @@ export default () => {
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
               </Route>
-
-              <Route path="/aboutus">
-                <AuthLazy onAboutUs={() => setIsSignedIn(true)} />
-              </Route>
-
+              <Route path="/aboutus" component={AboutLazy} />
               <Route path="/dashboard">
                 {!isSignedIn && <Redirect to="/" />}
                 <DashboardLazy />
