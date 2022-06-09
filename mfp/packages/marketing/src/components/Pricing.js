@@ -13,19 +13,6 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { Link as RouterLink } from 'react-router-dom';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   '@global': {
     ul: {
@@ -144,7 +131,6 @@ export default function Pricing() {
 
   return (
     <React.Fragment>
-      {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography
           component="h1"
@@ -166,11 +152,9 @@ export default function Pricing() {
           with little customization.
         </Typography>
       </Container>
-      {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
-            // Enterprise card is full width at sm breakpoint
             <Grid
               item
               key={tier.title}
@@ -245,10 +229,8 @@ export default function Pricing() {
           ))}
         </Grid>
         <Box mt={5}>
-          <Copyright />
         </Box>
       </Container>
-      {/* End footer */}
     </React.Fragment>
   );
 }
