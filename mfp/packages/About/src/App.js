@@ -11,26 +11,13 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'ab',
 });
 
-// const history = createBrowserHistory();
-
-// export default () => {
-//   const [isAboutUs, setIsAboutUs] = useState(false);
-
-//   useEffect(() => {
-//     if (isAboutUs) {
-//       history.push('/dashboard');
-//     }
-//   }, [isAboutUs]);
-
-export default ({ history, onAbout}) => {
+export default ({ history }) => {
   return (
     <div>
-      <StylesProvider generateClassName={generateClassName}>
+  <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
-            <Route path="/aboutus">
-              <AboutUs onAbout={onAbout} />
-            </Route>
+            <Route exact path="/aboutus" component={AboutUs} />
           </Switch>
         </Router>
       </StylesProvider>

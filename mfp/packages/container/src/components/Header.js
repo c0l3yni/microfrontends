@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeader: {
     backgroundColor:
-      theme.palette.type === 'light'
+      theme.palette.type === 'dark'
         ? theme.palette.grey[200]
         : theme.palette.grey[700],
   },

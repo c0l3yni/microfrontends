@@ -11,6 +11,19 @@ import Container from '@material-ui/core/Container';
 import MaterialLink from '@material-ui/core/Link';
 import { Link } from 'react-router-dom';
 
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <MaterialLink component={Link} to="/" color="inherit">
+        Your Website
+      </MaterialLink>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
 const useStyles = makeStyles((theme) => ({
   '@global': {
     a: {
@@ -48,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album({ onAboutUs }) {
+export default function Album() {
   const classes = useStyles();
 
   return (
@@ -74,7 +87,9 @@ export default function Album({ onAboutUs }) {
               color="textSecondary"
               paragraph
             >
-              Different Page
+              Something short and leading about the collection below—its
+              contents, the creator, etc. Make it short and sweet, but not too
+              short so folks don&apos;t simply skip over it entirely.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -87,13 +102,7 @@ export default function Album({ onAboutUs }) {
                 </Grid>
                 <Grid item>
                   <Link to="/aboutus">
-                    <Button 
-                    variant="outlined" 
-                    color="primary"
-                    type="submit"
-                    className={classes.submit}
-                    onClick={onAboutUs}
-                    >
+                    <Button variant="outlined" color="primary">
                       About Us
                     </Button>
                   </Link>
