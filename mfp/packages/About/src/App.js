@@ -5,30 +5,31 @@ import {
   createGenerateClassName,
 } from '@material-ui/core/styles';
 
-import AboutApp from './components/AboutApp';
+import AboutUs from './components/AboutUs';
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'ab',
 });
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
-export default () => {
-  const [isAboutUs, setIsAboutUs] = useState(false);
+// export default () => {
+//   const [isAboutUs, setIsAboutUs] = useState(false);
 
-  useEffect(() => {
-    if (isAboutUs) {
-      history.push('/dashboard');
-    }
-  }, [isAboutUs]);
+//   useEffect(() => {
+//     if (isAboutUs) {
+//       history.push('/dashboard');
+//     }
+//   }, [isAboutUs]);
 
+export default ({ history, onAbout}) => {
   return (
     <div>
       <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
             <Route path="/aboutus">
-              <AboutApp onAbout={onAbout} />
+              <AboutUs onAbout={onAbout} />
             </Route>
           </Switch>
         </Router>
